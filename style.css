@@ -1,0 +1,210 @@
+*{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    width:100%;
+    background-image: url("assets/images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.row{
+    height: 100vh;
+}
+.chat-box{
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 90vh;
+    border-radius: 10px;
+    background-color: rgb(255 255 255 / 80%);
+    box-shadow: 0 0 20px rgb(0, 0, 0,0.1    ),inset 2px 2px 15px #00000050;
+    backdrop-filter:blur(3px);
+}
+/* header */
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #ff0e53;
+    align-items: center;
+    height: 14%;
+    border-radius: 10px 10px 0px 0px ;
+    box-shadow: 0 0 20px rgb(0, 0, 0,0.1    ),inset 2px 2px 15px #00000050;
+}
+img{
+   height: 10vh;
+}
+#color{
+    margin: 5%;
+    cursor: pointer;
+}
+#color-icon{
+  color: white;
+  margin-bottom: 0;
+}
+.btns{
+    margin-right: 5%;
+    display: flex;
+    align-items: center;
+}
+.btns button{
+    border: none;
+    outline: 0;
+    background-color: transparent;
+    color: white;
+    font-weight: 700;
+    /* transition: 0.5s; */
+    margin-bottom: 0;
+    padding: 0;
+}
+.language{
+  transform: scale(1.2);
+}
+section{
+    height: 77%;
+}
+/* loading-buttons */
+.loading {
+    height: auto;
+    display: none;
+}
+.loading h6{
+    width: 8px;
+    height: 8px;
+    background: #ff0e53;
+    border-radius: 100%;
+    margin: 8px ;
+   animation: load 1s linear infinite;
+}
+.loading h6:nth-child(2){
+    animation-delay: .33s;
+}
+.loading h6:nth-child(3){
+    animation-delay: .66s;
+}
+  @keyframes load {
+
+    0%{
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(5px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  .conversation{
+    height: 92%;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+  .conversation::-webkit-scrollbar{
+    display: none;
+  }
+  .que-box , .ans-box{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+    width: 90%;
+  }
+  .ans-box{
+    justify-content: flex-start !important;
+    position: relative;
+  }
+  .conversation p {
+    font-weight: 600;
+    width: 80%;
+    padding-bottom: 0;
+    padding: 10px 20px;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0,0.2),inset 5px 5px 10px rgb(0, 0, 0,0.2);
+    border-radius: 10px;
+    font-size: 15px;
+    max-width: 350px;
+  }
+  .ans-box p {
+    padding-bottom: 50px;
+  }
+  .copy{
+    position: absolute;
+    bottom: 25px;
+    left:2.7%;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  .copy:hover{
+    transform: scale(1.2);
+    transition: 0.5s;
+  }
+  /* footer */
+  footer{
+    height: 9%;
+    background-color: #ff0e53;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 0px 10px 10px;
+  }
+  .search{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0,0.2);
+    width: -webkit-fill-available;
+    margin: 0px 10%;
+    padding: 8px 20px;
+  }
+  #input{
+    border: none;
+    outline: none;
+    width: -webkit-fill-available;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  #input::placeholder{
+    color: #1515156a;
+  }
+  #search-icon{
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.4s;
+    margin-left: 5px;
+  }
+
+  #search-icon:hover{
+    transform: scale(1.2);
+    transition: 0.4s;
+  }
+
+  @media(max-width:768px){
+      .search{
+        margin: 0px 5%;
+        padding: 5px 20px;
+      }
+      .chat-box{
+        width: auto;
+      }
+
+  }
+  @media(max-height:532px){
+    header{
+        height: 13%;
+    }
+    section{
+        height: 75%;
+    }
+    footer{
+        height: 12%;
+    }
+    .search{
+        margin: 0px 5%;
+        padding: 3px 20px;
+      }
+  }
