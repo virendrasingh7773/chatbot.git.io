@@ -57,7 +57,7 @@ const myfunction = async (message) => {
                         // model: "text-davinci-003",
                         model: "gpt-3.5-turbo",
                         // prompt: message +"in"+language[0].innerHTML,
-                        messages: [{role: 'user', content: message}],
+                        messages: [{role: 'user', content: message + "in"+language[0].innerHTML}],
                         // prompt: "hello gpt",
                         max_tokens: 3000,
                         // temperature: 1
