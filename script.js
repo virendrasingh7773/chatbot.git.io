@@ -36,15 +36,14 @@ function langfunction2(){
 let language = document.getElementsByClassName("language")
 
 let count = 0;
+// let apikey = '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';
+let apiKey = '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'
+// let apiKey = "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"
 const myfunction = async (message) => {
     try {
              
-        let url = "https://api.openai.com/v1/completions";
-        // let apiKey = "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"
-        // let apiKey = "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";
-        // let apiKey = "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"
-        let apiKey = "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"
-        let data = await fetch(`${url}`,
+    
+        let data = await fetch('https://api.openai.com/v1/chat/completions',
             {
                 method: 'POST',
                 headers: {
@@ -54,12 +53,20 @@ const myfunction = async (message) => {
                 },
                 body: JSON.stringify(
                     {
-                        model: "text-davinci-003",
-                        prompt: message +"in"+language[0].innerHTML,
-                        max_tokens: 3000
+                        // model: "text-davinci-003",
+                        model: "gpt-3.5-turbo",
+                        // prompt: message +"in"+language[0].innerHTML,
+                        messages: [{role: 'user', content: message}],
+                        // prompt: "hello gpt",
+                        max_tokens: 3000,
+                        // temperature: 1
                     }
                     )
             })
+
+
+
+
 
         let newdata = await data.json()
         let quebox = document.createElement("div");
@@ -72,7 +79,7 @@ const myfunction = async (message) => {
         let ans_p = document.createElement("p")
         ansbox.className = "ans-box"
         conversation.appendChild(ansbox)
-        ans_p.innerHTML = newdata.choices[0].text;
+        ans_p.innerHTML = newdata.choices[0].message.content;
         ans_p.id = "ans_p" + count
         ansbox.appendChild(ans_p)
         let copy = document.createElement("iconify-icon")
