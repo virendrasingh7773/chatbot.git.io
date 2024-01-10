@@ -36,8 +36,9 @@ function langfunction2(){
 let language = document.getElementsByClassName("language")
 
 let count = 0;
+let apiKey = "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"
 // let apikey = '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';
-let apiKey = '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'
+// let apiKey = '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'
 // let apiKey = "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"
 const myfunction = async (message) => {
     try {
