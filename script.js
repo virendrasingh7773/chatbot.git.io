@@ -36,14 +36,12 @@ function langfunction2(){
 let language = document.getElementsByClassName("language")
 
 let count = 0;
+// email openai =aashishchandel245@gmail.com
+// password = Virendra@123
 let apiKey = "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"
-// let apikey = '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';
-// let apiKey = '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'
 // let apiKey = "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"
 const myfunction = async (message) => {
     try {
-             
-    
         let data = await fetch('https://api.openai.com/v1/chat/completions',
             {
                 method: 'POST',
